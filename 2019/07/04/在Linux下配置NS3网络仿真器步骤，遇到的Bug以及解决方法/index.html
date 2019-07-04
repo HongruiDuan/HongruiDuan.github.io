@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http:HongruiDuan.github.io">
-  <title>Archives: 2019/6 | HongruiDuan&#39;s Blog</title>
+  <title>在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法 | HongruiDuan&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="华中科技大学15级">
-<meta name="keywords" content="后台，java，研究生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HongruiDuan&#39;s Blog">
-<meta property="og:url" content="http:HongruiDuan.github.io/archives/2019/06/index.html">
+  <meta name="description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法 安装步骤1.安装依赖库在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt sudo apt-get update 安装依赖库">
+<meta name="keywords" content="Skill">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法">
+<meta property="og:url" content="http:HongruiDuan.github.io/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/index.html">
 <meta property="og:site_name" content="HongruiDuan&#39;s Blog">
-<meta property="og:description" content="华中科技大学15级">
+<meta property="og:description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法 安装步骤1.安装依赖库在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt sudo apt-get update 安装依赖库">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-04T06:31:37.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HongruiDuan&#39;s Blog">
-<meta name="twitter:description" content="华中科技大学15级">
+<meta name="twitter:title" content="在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法">
+<meta name="twitter:description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法 安装步骤1.安装依赖库在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt sudo apt-get update 安装依赖库">
   
     <link rel="alternative" href="/atom.xml" title="HongruiDuan&#39;s Blog" type="application/atom+xml">
   
@@ -158,112 +159,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法
+    </h1>
+  
+
+        
+        <a href="/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/" class="archive-article-date">
+  	<time datetime="2019-07-04T03:19:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装NS3"><a href="#安装NS3" class="headerlink" title="安装NS3"></a>安装NS3</h3><p>Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错<br><a href="https://www.nsnam.org/bugzilla/show_bug.cgi?id=2670#c1" target="_blank" rel="noopener">报错信息与解决办法</a></p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h5 id="1-安装依赖库"><a href="#1-安装依赖库" class="headerlink" title="1.安装依赖库"></a>1.安装依赖库</h5><p>在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt</p>
+<p>sudo apt-get update</p>
+<p>安装依赖库</p>
+<p>sudo apt-get install gcc g++ python python-dev   C++和python</p>
+<p>sudo apt-get install mercurial   NS3代码维护使用的源码版本控制管理系统</p>
+<p>sudo apt-get install bzr   运行python绑定ns-3-dev需要bazaar这个组件</p>
+<p>sudo apt-get install gdb valgrind   调试工具</p>
+<p>sudo apt-get install gsl-bin libgsl-dev libgsl23   支持更多精确WIFI模块的GNU Scientific Library (GSL)</p>
+<p>sudo apt-get install flex bison libfl-dev  仿真必需的词法分析器和语法分析生成器</p>
+<p>sudo apt-get install g++-3.4 gcc-3.4  Network Simulation Cradle (nsc) stacks需要gcc-3.4</p>
+<p>sudo apt-get install tcpdump   读取pcap的packet traces</p>
+<p>sudo apt-get install sqlite sqlite3 libsqlite3-dev   支持统计特性的数据库软件</p>
+<p>sudo apt-get install libxml2 libxml2-dev   xml的配置存储软件</p>
+<p>sudo apt-get install libgtk2.0-0 libgtk2.0-dev   基于GTK的配置系统</p>
+<p>sudo apt-get install vtun lxc   在虚拟机and ns-3上测试</p>
+<p>sudo apt-get install uncrustify   支持utils/check-style.py 代码风格检查程序</p>
+<p>sudo apt-get install doxygen graphviz imagemagick   文档生成器</p>
+<p>sudo apt-get install texlive texlive-extra-utils texlive-latex-extra</p>
+<p>sudo apt-get install python-sphinx dia</p>
+<p>sudo apt-get install python-pygraphviz python-kiwi python- - pygoocanvas libgoocanvas-dev   Gustavo’s ns-3-pyviz的可视化软件</p>
+<p>sudo apt-get install libboost-signals-dev libboost-filesystem-dev   支持openflow 模块</p>
+<p>sudo apt-get install openmpi*   支持基于 MPI的分布式仿真</p>
+<h5 id="2-为NS3创建工程目录"><a href="#2-为NS3创建工程目录" class="headerlink" title="2.为NS3创建工程目录"></a>2.为NS3创建工程目录</h5><p>mkdir NS3</p>
+<p>cd NS3</p>
+<p>wget <a href="http://www.nsnam.org/release/ns-allinone-3.28.tar.bz2" target="_blank" rel="noopener">http://www.nsnam.org/release/ns-allinone-3.28.tar.bz2</a>  （注意NS3版本与linux版本）</p>
+<p>tar xjf ns-allinone-3.28.tar.bz2</p>
+<h5 id="3-编译NS3"><a href="#3-编译NS3" class="headerlink" title="3.编译NS3"></a>3.编译NS3</h5><p>cd ns-allinone-3.28</p>
+<p>./build.py </p>
+<p>cd ns-3.28</p>
+<p>./waf distclean （清除整个build目录）</p>
+<p>./waf configure –build-profile=debug –enable-examples –enable-tests（<strong>打开debug并开启例子及帮助</strong>）</p>
+<p>./waf build</p>
+<h5 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h5><p>./test.py -c core</p>
+<h5 id="5-运行hello-simulator"><a href="#5-运行hello-simulator" class="headerlink" title="5.运行hello-simulator"></a>5.运行hello-simulator</h5><p>./waf –run hello-simulator</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/20/Multi-homing网络中的能量效率博弈模型的分析/" class="archive-article-date">
-  	<time datetime="2019-06-20T09:28:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/20/Multi-homing网络中的能量效率博弈模型的分析/">Multi-homing网络中的能量效率博弈模型的分析</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reading，D2D</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/18/论文-协作D2D网络中两阶段的联合带宽和多中继调度博弈/" class="archive-article-date">
-  	<time datetime="2019-06-18T02:22:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/18/论文-协作D2D网络中两阶段的联合带宽和多中继调度博弈/">论文-协作D2D网络中两阶段的联合带宽和多中继调度博弈</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reading，D2D</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/16/在windos下基于GithubPage和hexo搭建自己的博客/" class="archive-article-date">
-  	<time datetime="2019-06-16T11:18:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/16/在windos下基于GithubPage和hexo搭建自己的博客/">在windos下基于GithubPage和hexo搭建自己的博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -275,19 +254,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http:http:HongruiDuan.github.io/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/06/20/Multi-homing网络中的能量效率博弈模型的分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Multi-homing网络中的能量效率博弈模型的分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -310,8 +376,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

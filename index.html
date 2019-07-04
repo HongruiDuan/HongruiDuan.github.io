@@ -160,6 +160,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/">在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/" class="archive-article-date">
+  	<time datetime="2019-07-04T03:19:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装NS3"><a href="#安装NS3" class="headerlink" title="安装NS3"></a>安装NS3</h3><p>Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错<br><a href="https://www.nsnam.org/bugzilla/show_bug.cgi?id=2670#c1" target="_blank" rel="noopener">报错信息与解决办法</a></p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h5 id="1-安装依赖库"><a href="#1-安装依赖库" class="headerlink" title="1.安装依赖库"></a>1.安装依赖库</h5><p>在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt</p>
+<p>sudo apt-get update</p>
+<p>安装依赖库</p>
+<p>sudo apt-get install gcc g++ python python-dev   C++和python</p>
+<p>sudo apt-get install mercurial   NS3代码维护使用的源码版本控制管理系统</p>
+<p>sudo apt-get install bzr   运行python绑定ns-3-dev需要bazaar这个组件</p>
+<p>sudo apt-get install gdb valgrind   调试工具</p>
+<p>sudo apt-get install gsl-bin libgsl-dev libgsl23   支持更多精确WIFI模块的GNU Scientific Library (GSL)</p>
+<p>sudo apt-get install flex bison libfl-dev  仿真必需的词法分析器和语法分析生成器</p>
+<p>sudo apt-get install g++-3.4 gcc-3.4  Network Simulation Cradle (nsc) stacks需要gcc-3.4</p>
+<p>sudo apt-get install tcpdump   读取pcap的packet traces</p>
+<p>sudo apt-get install sqlite sqlite3 libsqlite3-dev   支持统计特性的数据库软件</p>
+<p>sudo apt-get install libxml2 libxml2-dev   xml的配置存储软件</p>
+<p>sudo apt-get install libgtk2.0-0 libgtk2.0-dev   基于GTK的配置系统</p>
+<p>sudo apt-get install vtun lxc   在虚拟机and ns-3上测试</p>
+<p>sudo apt-get install uncrustify   支持utils/check-style.py 代码风格检查程序</p>
+<p>sudo apt-get install doxygen graphviz imagemagick   文档生成器</p>
+<p>sudo apt-get install texlive texlive-extra-utils texlive-latex-extra</p>
+<p>sudo apt-get install python-sphinx dia</p>
+<p>sudo apt-get install python-pygraphviz python-kiwi python- - pygoocanvas libgoocanvas-dev   Gustavo’s ns-3-pyviz的可视化软件</p>
+<p>sudo apt-get install libboost-signals-dev libboost-filesystem-dev   支持openflow 模块</p>
+<p>sudo apt-get install openmpi*   支持基于 MPI的分布式仿真</p>
+<h5 id="2-为NS3创建工程目录"><a href="#2-为NS3创建工程目录" class="headerlink" title="2.为NS3创建工程目录"></a>2.为NS3创建工程目录</h5><p>mkdir NS3</p>
+<p>cd NS3</p>
+<p>wget <a href="http://www.nsnam.org/release/ns-allinone-3.28.tar.bz2" target="_blank" rel="noopener">http://www.nsnam.org/release/ns-allinone-3.28.tar.bz2</a>  （注意NS3版本与linux版本）</p>
+<p>tar xjf ns-allinone-3.28.tar.bz2</p>
+<h5 id="3-编译NS3"><a href="#3-编译NS3" class="headerlink" title="3.编译NS3"></a>3.编译NS3</h5><p>cd ns-allinone-3.28</p>
+<p>./build.py </p>
+<p>cd ns-3.28</p>
+<p>./waf distclean （清除整个build目录）</p>
+<p>./waf configure –build-profile=debug –enable-examples –enable-tests（<strong>打开debug并开启例子及帮助</strong>）</p>
+<p>./waf build</p>
+<h5 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h5><p>./test.py -c core</p>
+<h5 id="5-运行hello-simulator"><a href="#5-运行hello-simulator" class="headerlink" title="5.运行hello-simulator"></a>5.运行hello-simulator</h5><p>./waf –run hello-simulator</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Skill</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Multi-homing网络中的能量效率博弈模型的分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -514,11 +622,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reading，D2D</a>
+                <a href="javascript:void(0)" class="js-tag color1">Skill</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Skill</a>
+                <a href="javascript:void(0)" class="js-tag color2">Reading，D2D</a>
               </li>
             
             <div class="clearfix"></div>
