@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法 安装步骤1.安装依赖库在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt sudo apt-get update 安装依赖库">
+<meta name="description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法">
 <meta name="keywords" content="Skill">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法">
 <meta property="og:url" content="http:HongruiDuan.github.io/2019/07/04/在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法/index.html">
 <meta property="og:site_name" content="HongruiDuan&#39;s Blog">
-<meta property="og:description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法 安装步骤1.安装依赖库在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt sudo apt-get update 安装依赖库">
+<meta property="og:description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T06:31:37.619Z">
+<meta property="og:updated_time" content="2019-07-09T15:14:15.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Linux下配置NS3网络仿真器步骤，遇到的Bug以及解决方法">
-<meta name="twitter:description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法 安装步骤1.安装依赖库在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt sudo apt-get update 安装依赖库">
+<meta name="twitter:description" content="安装NS3Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错报错信息与解决办法">
 
 
 
@@ -181,22 +181,42 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-主页">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-主页"></i> <br>
             
-            Home
+            主页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-标签"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-归档"></i> <br>
             
-            Archives
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-友链"></i> <br>
+            
+            Sitemap
           </a>
         </li>
       
@@ -238,7 +258,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HongruiDuan">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/header.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -301,6 +321,8 @@
 
       
         <h3 id="安装NS3"><a href="#安装NS3" class="headerlink" title="安装NS3"></a>安装NS3</h3><p>Tips：在安装之前最好确定好自己的Linux版本，越新的linux版本对应越新的NS3的版本，同时如果是用虚拟机的话要运行NS3需要较大的RAM，我的18.04 3g内存在运行 Hello simulator时由于内存溢出报错<br><a href="https://www.nsnam.org/bugzilla/show_bug.cgi?id=2670#c1" target="_blank" rel="noopener">报错信息与解决办法</a></p>
+<a id="more"></a>
+
 <h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><h5 id="1-安装依赖库"><a href="#1-安装依赖库" class="headerlink" title="1.安装依赖库"></a>1.安装依赖库</h5><p>在安装NS3前需要安装一些依赖库，在安装库之前可以先更新一下apt</p>
 <p>sudo apt-get update</p>
 <p>安装依赖库</p>
@@ -443,6 +465,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="HongruiDuan">
+            
               <p class="site-author-name" itemprop="name">HongruiDuan</p>
               <p class="site-description motion-element" itemprop="description">华中科技大学15级</p>
           </div>
@@ -452,7 +476,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives">
               
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
